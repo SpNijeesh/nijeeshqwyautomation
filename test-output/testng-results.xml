@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-15T11:04:05 IST" name="Default suite" finished-at="2024-01-15T11:04:20 IST" duration-ms="14791">
+    <groups>
+    </groups>
+    <test started-at="2024-01-15T11:04:05 IST" name="Default test" finished-at="2024-01-15T11:04:20 IST" duration-ms="14791">
+      <class name="qwy.automationqwy.ShopMerchantOverallTesting$ShopMerchantFramework">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qwy.automationqwy.ShopMerchantOverallTesting$ShopMerchantFramework@17f62e33]" started-at="2024-01-15T11:04:05 IST" name="setup" finished-at="2024-01-15T11:04:07 IST" duration-ms="1939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="inventoryEdit()[pri:6, instance:qwy.automationqwy.ShopMerchantOverallTesting$ShopMerchantFramework@17f62e33]" started-at="2024-01-15T11:04:07 IST" name="inventoryEdit" finished-at="2024-01-15T11:04:19 IST" duration-ms="12421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryEdit -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:qwy.automationqwy.ShopMerchantOverallTesting$ShopMerchantFramework@17f62e33]" started-at="2024-01-15T11:04:19 IST" name="tearDown" finished-at="2024-01-15T11:04:20 IST" duration-ms="391" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- qwy.automationqwy.ShopMerchantOverallTesting$ShopMerchantFramework -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
