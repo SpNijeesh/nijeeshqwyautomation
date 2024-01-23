@@ -1,13 +1,18 @@
 package qwy.automationqwy;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.idealized.Javascript;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -34,6 +39,8 @@ public class ShopMerchantOverallTesting {
 	    	driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			driver.manage().window().maximize();
+			JavascriptExecutor js= (JavascriptExecutor)driver;
+			
 	        Map<String, Object> prefs = new HashMap<>();
 	        prefs.put("profile.default_content_settings.popups", 0);
 	        prefs.put("download.default_directory", "\"C:\\Users\\Niju\\Downloads\\");
@@ -51,9 +58,10 @@ public class ShopMerchantOverallTesting {
 	      System.out.println("Login success in Shop Merchant");
 	    }
 	    @Test(priority = 2)
-	    public void CategoryLists() {
+	    public void CategoryListOriginal() {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    	//login();
+	    	login();
+            driver.findElement(By.xpath("//tbody/tr[1]/td[2]")).click(); 
 			List<WebElement> categoryNextPages = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='p-paginator-bottom p-paginator p-component ng-star-inserted']//span//button")));
 	        for (WebElement categoryNextPage : categoryNextPages) {
 	            // Get the text of each shop
@@ -65,14 +73,16 @@ public class ShopMerchantOverallTesting {
 		            String categoryNames = categoryList.getText();
 		            System.out.println(categoryNames);
 		            }
-	            categoryNextPage.click();
+		        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		        jsExecutor.executeScript("arguments[0].click();", categoryNextPage);
 	            }
 	        }
 
+	  
 	    @Test(priority=3)
 	    public void categorySearch() {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    	//login();
+	    	login();
 	    	WebElement searchfield = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Search Category']")));
 	    	searchfield.click();
 	    	searchfield.sendKeys("IOS PRIVATE-L2");
@@ -80,7 +90,7 @@ public class ShopMerchantOverallTesting {
 	    @Test(priority=4)
 	    public void categoryRequest() throws InterruptedException {
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    	//login();
+	    	login();
 	    	WebElement requestcat = driver.findElement(By.xpath("//button[normalize-space()='Request Category']"));
 	    	requestcat.click();
 	    	WebElement categoryname = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='Enter Category Name']")));
@@ -109,8 +119,6 @@ public class ShopMerchantOverallTesting {
 	    public void inventoryEdit() throws InterruptedException {
 
 	    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-	    	login();
-	    	inventoryPageSerach();
 	    	WebElement inventoryedit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='button']")));
 	    	inventoryedit.click();
 	    	WebElement inventoryprice = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='select-shop-wrap']//input[@formcontrolname='price']")));
@@ -215,7 +223,8 @@ public class ShopMerchantOverallTesting {
 	            System.out.println(updatedlist);
 	            }}
 	    }
-	    @AfterClass
+	    @AfterMethod
+		@AfterClass
 	    public void tearDown() {
 	        if (driver != null) {
 	            driver.quit();
