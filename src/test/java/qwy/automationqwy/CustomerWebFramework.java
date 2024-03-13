@@ -6,34 +6,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class CustomerWebFramework {
-	
 
     ChromeDriver driver;
+    
     private String mobile = "9037342807";
     private String password = "123456789";
     private String expectedText = "Nijeesh_Trivandrum";
 
-    @BeforeClass
+   @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--incognito");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.get("https://stage-customer.qwqer.in/home");
         
     }
+ 
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void performLogin() throws Throwable{
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     	driver.findElement(By.xpath("//img[@alt='Trivandrum']")).click();
@@ -54,7 +57,7 @@ public class CustomerWebFramework {
         }
         Thread.sleep(2000);
     }
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void performAddToCart() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='address']")));
@@ -81,7 +84,7 @@ public class CustomerWebFramework {
         WebElement addToCartButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='shop-detail-container']//div[1]//app-product-card[1]//div[1]//div[1]//div[3]//div[3]//button[1]//div[1]")));
         addToCartButton.click();
     }
-@Test(priority = 3)
+@Test(priority = 4)
 public void performPayment() {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	driver.findElement(By.xpath("//button[@type='submit']")).click(); //proceed to payment

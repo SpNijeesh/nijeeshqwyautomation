@@ -97,6 +97,7 @@ public class ShopMerchantOverallTesting {
 	    	categoryname.sendKeys(textToSend); // Category Name
 	    	driver.findElement(By.xpath("//div[3]//div[2]//label[1]//span[1]")).click(); //Public/private selection
 	        WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']")); //File Input
+	      //input[@type='file']
 	        fileInput.sendKeys(filePath);
 	        driver.findElement(By.xpath("//button[normalize-space()='Request']")).click(); //Submit
 	        WebElement submissionmessage = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='toast-container']")));

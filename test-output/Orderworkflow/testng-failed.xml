@@ -12,6 +12,13 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- qwy.automationqwy.CustomerWebFramework -->
+      <class name="qwy.automationqwy.ShopMerchantFramework">
+        <methods>
+          <include name="setup"/>
+          <include name="orderModule"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- qwy.automationqwy.ShopMerchantFramework -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Orderworkflow] -->

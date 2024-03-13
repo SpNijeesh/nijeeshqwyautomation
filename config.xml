@@ -1,0 +1,16 @@
+<config>
+    <ShopName>TestName</ShopName>
+    <PreviousDate>01 Feb 2024</PreviousDate>
+    <Address>TestAddress</Address>
+    <City>Trivandrum</City>
+    <Pincode>555555</Pincode>
+    <StateName>Kerala</StateName>
+    <Email>keralaauto@gmail.com</Email>
+    <MobileNumber>9632589632</MobileNumber>
+    <FilePath>C:\Users\Niju\eclipse-workspace\automationqwy\src\main\java\qwy\automationqwy\resources\spiderman.jpg</FilePath>
+    <RegionName>Trivandrum</RegionName>
+    <MerchantName>QWY SOFT 01</MerchantName>
+    <MerchantEmail>qwysoft@qwqer.com</MerchantEmail>
+    <MerchantPhone>8293714650</MerchantPhone>
+    <MerchantPassword>123456789</MerchantPassword>
+</config>
