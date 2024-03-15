@@ -1,16 +1,19 @@
 package qwy.automationqwy;
 import java.time.Duration;
-
+import java.util.HashMap;
+import java.util.Map;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import qwy.automationqwy.Pageobject.Categorypage;
 import qwy.automationqwy.Pageobject.DashboardFilterPage;
 import qwy.automationqwy.Pageobject.MerchantPage;
 import qwy.automationqwy.Pageobject.PromotionPage;
@@ -25,20 +28,21 @@ public class ShopAdminTest {
     private MerchantPage merchantpage;
     private DashboardFilterPage dashboardFilterPage;
     private PromotionPage promotionpage;
+    private Categorypage categorypage;
     
     private String RegionName = "Trivandrum";
     
     //New Merchant Deatils
     
-    private String MerchantName="CSK-02";
-	private String MerchantEmail="csk02@bcci.com";
-	private String Merchantphone="4624258659";
+    private String MerchantName="CSK-03";
+	private String MerchantEmail="csk03@bcci.com";
+	private String Merchantphone="4654258659";
 	private String Mercahantpassword="123456789";
 	private String ExpectedTosterMessage= "Merchant Updated";
 	
 	//For Update the Merchant
-	private String MerchantNameForSearch="QWY SOFT 05";
-	private String MerchantNameForUpdate="QWY SOFT 02";
+	private String MerchantNameForSearch="QWY SOFT 02";
+	private String MerchantNameForUpdate="QWY SOFT 05";
 	private String MerchantEmailForUpdate="new@qwysoft.com";
 	private String MerchantMobileForUpdate="5522336611";
 	private String MerchantpasswordForUpdate="123456789";
@@ -46,17 +50,27 @@ public class ShopAdminTest {
 	//Promotions
 	
 	private String promotionnamesearch="DEMOAPR07";
+	private String promotiontitle="Nijeesh-Automation";
+	private String promotiondescribtion="Nijeesh";
+	private String promotioncode="Nijeesh-Automation";
+	private String filePath = "C:\\Users\\Niju\\Downloads\\promotionsample.png";
 	
-    @BeforeClass
+    @BeforeTest
     public void setUp() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("profile.default_content_settings.popups", 0);
+        prefs.put("download.default_directory", "\"C:\\Users\\Niju\\Downloads\\");
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", prefs);
         shopAdminPage = new ShopAdminLoginPage(driver);
         dashboardFilterPage = new DashboardFilterPage(driver);
         merchantpage= new MerchantPage(driver);
         promotionpage= new PromotionPage(driver);
+        categorypage= new Categorypage(driver);
         driver.get("https://stage-shop-admin.qwqer.in/");
         shopAdminPage.login("Nijeesh", "123456789");
         Thread.sleep(2000);
@@ -153,6 +167,45 @@ public class ShopAdminTest {
     	//Aseert
    	}
     
+    @Test(priority = 13)
+   	public void PromotionAddRegion() throws InterruptedException
+   	{
+    	promotionpage.addregionpromotions(promotiontitle,promotiondescribtion,promotioncode,filePath);
+    	//Asserion
+   	}
+    
+    @Test(priority = 14)
+   	public void PromotionAddSingleShop() throws InterruptedException
+   	{
+    	promotionpage.addregion();
+   	}
+    
+    @Test(priority = 15)
+   	public void PromotionAddMultipleShop() throws InterruptedException
+   	{
+    	
+   	}
+    @Test(priority = 16)
+   	public void PromotionAddProduct() throws InterruptedException
+   	{
+   	}
+    @Test(priority = 17)
+   	public void PromotionAddCategory() throws InterruptedException
+   	{
+   	}
+    @Test(priority = 18)
+   	public void PromotionAddShopParam() throws InterruptedException
+   	{
+   	}
+    
+    @Test(priority = 15)
+   	public void catadd() throws InterruptedException
+   	{
+    	categorypage.CategoryAdd();
+   	}
+    
+    
+   
     @AfterClass
     public void tearDown() {
         if (driver != null) {

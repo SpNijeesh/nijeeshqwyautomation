@@ -6,8 +6,8 @@
       <class name="qwy.automationqwy.ShopAdminTest">
         <methods>
           <include name="tearDown"/>
-          <include name="PromotionNameSearch"/>
           <include name="setUp"/>
+          <include name="catadd"/>
         </methods>
       </class> <!-- qwy.automationqwy.ShopAdminTest -->
     </classes>

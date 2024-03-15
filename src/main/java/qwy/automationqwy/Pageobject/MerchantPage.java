@@ -205,7 +205,7 @@ public class MerchantPage {
     	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Merchants']")));
     	merchants.click();
     	searchfeild.click();
-    	searchfeild.sendKeys("QWY SOFT 05");
+    	searchfeild.sendKeys("QWY SOFT 02");
     	searchbutton.click();
     	Thread.sleep(2000);
     	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody/tr[1]/td[8]/div[1]/div[1]/div[1]")));
