@@ -3,8 +3,13 @@
 <suite name="Orderworkflow">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="qwy.automationqwy.CustomerWebFramework"/>
-      <class name="qwy.automationqwy.ShopMerchantFramework"/>
+      <class name="qwy.automationqwy.Shopadminadduser">
+        <methods>
+          <include name="adduser"/>
+          <include name="addexistinguser"/>
+          <!-- Add more methods here as needed -->
+        </methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

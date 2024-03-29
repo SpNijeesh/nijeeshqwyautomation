@@ -49,8 +49,6 @@ public class Categorypage {
 		fileInput.sendKeys(projectpath+"\\files\\promotionsample.png");
 		submitcat.click();
 		Thread.sleep(3000);
-		
-
 	}
 	
 	public void subCategoryl2Add()throws InterruptedException

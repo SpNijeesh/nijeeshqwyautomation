@@ -3,22 +3,14 @@
 <suite name="Failed suite [Orderworkflow]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="qwy.automationqwy.CustomerWebFramework">
+      <class name="qwy.automationqwy.Shopadminadduser">
         <methods>
+          <include name="adduser"/>
+          <include name="addexistinguser"/>
           <include name="setUp"/>
-          <include name="performPayment"/>
-          <include name="performAddToCart"/>
-          <include name="performLogin"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- qwy.automationqwy.CustomerWebFramework -->
-      <class name="qwy.automationqwy.ShopMerchantFramework">
-        <methods>
-          <include name="setup"/>
-          <include name="orderModule"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- qwy.automationqwy.ShopMerchantFramework -->
+      </class> <!-- qwy.automationqwy.Shopadminadduser -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Orderworkflow] -->

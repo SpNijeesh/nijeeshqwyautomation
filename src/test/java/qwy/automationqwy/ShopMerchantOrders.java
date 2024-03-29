@@ -6,7 +6,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ShopMerchantFramework {
+public class ShopMerchantOrders {
     private ChromeDriver driver;
     private String user = "9999888999";
     private String pass = "111111111111111";

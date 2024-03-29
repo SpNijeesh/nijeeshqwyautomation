@@ -27,16 +27,15 @@ public class ShopAdminTest {
     private ShopAdminLoginPage shopAdminPage;
     private MerchantPage merchantpage;
     private DashboardFilterPage dashboardFilterPage;
-    private PromotionPage promotionpage;
     private Categorypage categorypage;
     
     private String RegionName = "Trivandrum";
     
     //New Merchant Deatils
     
-    private String MerchantName="CSK-03";
-	private String MerchantEmail="csk03@bcci.com";
-	private String Merchantphone="4654258659";
+    private String MerchantName="CSK-04";
+	private String MerchantEmail="csk04@bcci.com";
+	private String Merchantphone="4654958659";
 	private String Mercahantpassword="123456789";
 	private String ExpectedTosterMessage= "Merchant Updated";
 	
@@ -47,14 +46,7 @@ public class ShopAdminTest {
 	private String MerchantMobileForUpdate="5522336611";
 	private String MerchantpasswordForUpdate="123456789";
 	
-	//Promotions
-	
-	private String promotionnamesearch="DEMOAPR07";
-	private String promotiontitle="Nijeesh-Automation";
-	private String promotiondescribtion="Nijeesh";
-	private String promotioncode="Nijeesh-Automation";
-	private String filePath = "C:\\Users\\Niju\\Downloads\\promotionsample.png";
-	
+
     @BeforeTest
     public void setUp() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -69,7 +61,6 @@ public class ShopAdminTest {
         shopAdminPage = new ShopAdminLoginPage(driver);
         dashboardFilterPage = new DashboardFilterPage(driver);
         merchantpage= new MerchantPage(driver);
-        promotionpage= new PromotionPage(driver);
         categorypage= new Categorypage(driver);
         driver.get("https://stage-shop-admin.qwqer.in/");
         shopAdminPage.login("Nijeesh", "123456789");
@@ -152,58 +143,13 @@ public class ShopAdminTest {
     	merchantpage.merchantfilter();
     	
    	}
-    
-    @Test(priority = 11)
-   	public void PromotionRegionfilter() throws InterruptedException
-   	{
-    	promotionpage.promotionsFilter(RegionName);
-    	//Aseert
-    	
-   	}
-    @Test(priority = 12)
-   	public void PromotionNameSearch() throws InterruptedException
-   	{
-    	promotionpage.promotionsnamesearch(promotionnamesearch);
-    	//Aseert
-   	}
-    
-    @Test(priority = 13)
-   	public void PromotionAddRegion() throws InterruptedException
-   	{
-    	promotionpage.addregionpromotions(promotiontitle,promotiondescribtion,promotioncode,filePath);
-    	//Asserion
-   	}
-    
-    @Test(priority = 14)
-   	public void PromotionAddSingleShop() throws InterruptedException
-   	{
-    	promotionpage.addregion();
-   	}
-    
-    @Test(priority = 15)
-   	public void PromotionAddMultipleShop() throws InterruptedException
-   	{
-    	
-   	}
-    @Test(priority = 16)
-   	public void PromotionAddProduct() throws InterruptedException
-   	{
-   	}
-    @Test(priority = 17)
-   	public void PromotionAddCategory() throws InterruptedException
-   	{
-   	}
-    @Test(priority = 18)
-   	public void PromotionAddShopParam() throws InterruptedException
-   	{
-   	}
-    
+
+      
     @Test(priority = 15)
    	public void catadd() throws InterruptedException
    	{
     	categorypage.CategoryAdd();
    	}
-    
     
    
     @AfterClass

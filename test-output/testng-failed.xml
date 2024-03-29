@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="qwy.automationqwy.ShopAdminTest">
+      <class name="qwy.automationqwy.ShopAdminProducts">
         <methods>
+          <include name="singleproductadd"/>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="catadd"/>
         </methods>
-      </class> <!-- qwy.automationqwy.ShopAdminTest -->
+      </class> <!-- qwy.automationqwy.ShopAdminProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

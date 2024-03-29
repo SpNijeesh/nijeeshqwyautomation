@@ -1,0 +1,2 @@
+Shop_Id,Product_Name,Variant_Name,Weight,Category_Name,SKU,Shop_SKU,Weight_In_Kg,Description,MRP,Price,Is_Private,Product_Image_URL,Variant_Image_URL
+293,GUJ-PR-23,GUJ-VN-23,1 KG,"Cookware	",GUJ-SKU-23,scbsndvsabnd,0.1,Sample description 8,50,40,FALSE,image1.jpg,variant1.jpg

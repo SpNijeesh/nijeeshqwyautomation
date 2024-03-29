@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-15T14:43:48 IST" name="Default suite" finished-at="2024-03-15T14:43:59 IST" duration-ms="10602">
+  <suite started-at="2024-03-29T18:08:18 IST" name="Default suite" finished-at="2024-03-29T18:08:28 IST" duration-ms="10284">
     <groups>
     </groups>
-    <test started-at="2024-03-15T14:43:48 IST" name="Default test" finished-at="2024-03-15T14:43:59 IST" duration-ms="10602">
-      <class name="qwy.automationqwy.ShopAdminTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:qwy.automationqwy.ShopAdminTest@3a7442c7]" started-at="2024-03-15T14:43:48 IST" name="setUp" finished-at="2024-03-15T14:43:54 IST" duration-ms="5762" status="PASS">
+    <test started-at="2024-03-29T18:08:18 IST" name="Default test" finished-at="2024-03-29T18:08:28 IST" duration-ms="10284">
+      <class name="qwy.automationqwy.ShopAdminProducts">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:qwy.automationqwy.ShopAdminProducts@3b0fe47a]" started-at="2024-03-29T18:08:18 IST" name="setUp" finished-at="2024-03-29T18:08:26 IST" duration-ms="7736" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="catadd()[pri:15, instance:qwy.automationqwy.ShopAdminTest@3a7442c7]" started-at="2024-03-15T14:43:54 IST" name="catadd" finished-at="2024-03-15T14:43:58 IST" duration-ms="4441" status="PASS">
+        <test-method signature="productcsv()[pri:3, instance:qwy.automationqwy.ShopAdminProducts@3b0fe47a]" started-at="2024-03-29T18:08:26 IST" name="productcsv" finished-at="2024-03-29T18:08:28 IST" duration-ms="2095" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- catadd -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qwy.automationqwy.ShopAdminTest@3a7442c7]" started-at="2024-03-15T14:43:58 IST" name="tearDown" finished-at="2024-03-15T14:43:59 IST" duration-ms="357" status="PASS">
+        </test-method> <!-- productcsv -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:qwy.automationqwy.ShopAdminProducts@3b0fe47a]" started-at="2024-03-29T18:08:28 IST" name="tearDown" finished-at="2024-03-29T18:08:28 IST" duration-ms="401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- qwy.automationqwy.ShopAdminTest -->
+      </class> <!-- qwy.automationqwy.ShopAdminProducts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
